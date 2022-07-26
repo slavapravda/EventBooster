@@ -1,0 +1,7 @@
+.buy-btn {
+  @include button;
+}
+
+.more-btn {
+  @include button-inverse;
+}
