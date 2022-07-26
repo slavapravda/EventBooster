@@ -1,2 +1,11 @@
+
 @import './common';
-@import './example';
+@import './utils/variables';
+@import './utils/base';
+@import './utils/mixins';
+@import './components/container';
+@import './components/navigation';
+@import './layouts/header';
+@import './layouts/card-container';
+@import './layouts/footer';
+

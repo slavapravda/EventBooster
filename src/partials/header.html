@@ -1,0 +1,159 @@
+<header class="section-header">
+    <div class="container section-header__container">
+      <div class="logo">
+        <a href="index.html" class="logo__link">
+          <p class="logo__text">Hell<span class="logo__text--icon">EN</span></p>
+        </a>
+        <p class="logo__title">
+          <span class="logo__title--accent">Hellish </span>english
+        </p>
+      </div>
+      <div class="container__header-nav">
+        <nav class="header-nav">
+          <ul class="navigation">
+            <li class="navigation__item">
+              <a href="#programs" class="navigation__link">Studying program</a>
+            </li>
+            <li class="navigation__item">
+              <a href="#about" class="navigation__link">About</a>
+            </li>
+            <li class="navigation__item">
+              <a href="#guarantee" class="navigation__link">Training options</a>
+            </li>
+            <li class="navigation__item">
+              <a href="#contacts" class="navigation__link">Contacts</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="buttons">
+          <button type="button" class="button-header" data-modal-open-header>
+            consultation by phone
+          </button>
+          <button
+            class="button-mobmenu menu-open-btn'"
+            type="button"
+            aria-controls="menu"
+            data-menu-button
+          >
+            <svg
+              aria-label="Переключатель мобильного меню"
+              width="21"
+              height="18"
+            >
+              <use
+                class="button-mobmenu__icon--open"
+                href="./images/icons.svg#icon-menu"
+              ></use>
+              <use
+                class="button-mobmenu__icon--close"
+                href="./images/icons.svg#icon-close"
+              ></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="mob-menu" id="menu" data-menu>
+        <div class="logo mob-menu__logo">
+          <a href="index.html" class="logo__link">
+            <p class="logo__text">Hell<span class="logo__text--icon">EN</span></p>
+          </a>
+          <p class="logo__title">
+            <span class="logo__title--accent">Hellish </span>english
+          </p>
+        </div>
+        <ul class="navigation">
+          <li class="navigation__item">
+            <a href="#programs" class="navigation__link" data-link1
+              >Studying program</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#about" class="navigation__link" data-link2>About</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#guarantee" class="navigation__link" data-link3
+              >Training options</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#contacts" class="navigation__link" data-link4>Contacts</a>
+          </li>
+        </ul>
+        <button type="button" class="mob-menu__button" data-modal-open-header-mob>
+          Consultation by phone
+        </button>
+      </div>
+      <div class="back-top">
+        <a class="back-top__link" href="#" onclick="return up()">&#8673;</a>
+      </div>
+    </div>
+    <div class="about__backdrop is-hidden" data-modal-header>
+      <div class="about__modal-wrp">
+        <button
+          type="button"
+          data-modal-close-header-mob
+          class="about__modal-close-btn header-mob"
+        >
+          <svg class="about__close-btn-icon">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <button
+          type="button"
+          data-modal-close-header
+          class="about__modal-close-btn header-tab"
+        >
+          <svg class="about__close-btn-icon">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <h2 class="contacts__title">
+          Registration for a
+          <span class="contacts__title--add-decor"> free</span> phone<span
+            class="contacts__title--add-decor"
+          >
+            consultation
+          </span>
+          on the nuances of English UPE
+        </h2>
+        <p class="contacts__text">
+          Leave a request for participation in a
+          <span class="contacts__title--add-decor">free lesson</span>. <br />A
+          consultant will contact you and answer your questions
+        </p>
+        <form class="contzcts__form">
+          <label for="user name" class="contacts__label">
+            <div class="contacts-label--position">
+              <input
+                type="text"
+                class="contacts__label--input add-validation"
+                name="user name"
+                id="user name"
+                placeholder="Name*"
+                required
+                minlength="2"
+              />
+            </div>
+          </label>
+          <label for="user phone" class="contacts__label">
+            <div class="contacts-label--position">
+              <input
+                type="tel"
+                class="contacts__label--input"
+                name="user phone"
+                id="input"
+                placeholder="Phone*"
+                required
+                pattern="(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?"
+                value=""
+              />
+            </div>
+          </label>
+          <button type="submit" class="contacts-button">
+            i want a free lesson
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+  

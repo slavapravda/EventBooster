@@ -1,0 +1,202 @@
+.section-header {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include tablet {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.container__header-nav {
+    @include desktop {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+.header-nav {
+    display: none;
+    @include desktop {
+        display: flex;
+        justify-self: unset;
+    }
+}
+
+.buttons {
+    display: flex;
+}
+
+.button-header {
+    @include button-inverse;
+    display: none;
+    width: 260px;
+
+    @include tablet {
+        display: block;
+    }
+}
+
+.button-mobmenu {
+    display: block;
+    margin-left: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    color: $white-color;
+
+    @include desktop {
+        display: none;
+    }
+
+    &__icon--close {
+        fill: currentColor;
+    }
+
+    &:hover,
+    &:focus {
+        color: $accent-color;
+        fill: $accent-color;
+        @include transition;
+    }
+
+    &__icon--close {
+        display: none;
+    }
+
+    &.is-open &__icon--close {
+        display: block;
+    }
+
+    &.is-open &__icon--open {
+        display: none;
+    }
+}
+
+.mob-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 20px;
+    z-index: 9;
+    color: $white-color;
+    background: rgba(17, 21, 24, 0.9);
+
+    opacity: 0.25;
+    transform: translateY(-100vh);
+    scale: 0.95;
+    pointer-events: none;
+    @include transition;
+
+    &.is-open {
+        opacity: 1;
+        transform: translateY(0);
+        scale: 1;
+        pointer-events: all;
+        @include transition;
+    }
+
+    @include tablet {
+        padding: 40px;
+    }
+
+    @include desktop {
+        display: none;
+    }
+
+    &__logo {
+        @include mobile {
+            width: 440px;
+            margin: auto;
+        }
+        @include tablet {
+            width: 704px;
+        }
+    }
+
+    &__button {
+        @include button-inverse;
+        width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        @include tablet {
+            display: none;
+        }
+    }
+}
+
+.back-top {
+    position: fixed;
+    bottom: 0px;
+    padding: 0px;
+    right: 5vw;
+    z-index: 8;
+
+    &__link {
+        width: 40px;
+        height: 30px;
+        display: block;
+        text-decoration: none;
+        color: $accent-color;
+        transition: all linear 0.2s;
+        text-align: center;
+        opacity: 0.75;
+        font-size: 16px;
+
+        @include mobile {
+            height: 40px;
+            font-size: 18px;
+        }
+
+        @include tablet {
+            height: 50px;
+            font-size: 20px;
+        }
+
+        @include desktop {
+            height: 60px;
+            font-size: 22px;
+        }
+
+        &:hover {
+            height: 50px;
+            background: rgba(17, 21, 24, 0.7);
+            transition: all linear 0.2s;
+            opacity: 1;
+
+            @include mobile {
+                height: 60px;
+            }
+
+            @include tablet {
+                height: 70px;
+            }
+
+            @include desktop {
+                height: 80px;
+            }
+        }
+    }
+}
+
+.about__modal-close-btn.header-mob {
+    @include tablet {
+        display: none;
+    }
+}
+
+.about__modal-close-btn.header-tab {
+    @include upto-tablet {
+        display: none;
+    }
+}
