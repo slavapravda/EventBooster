@@ -1,8 +1,4 @@
 .footer {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.21;
-  text-align: center;
   color: #939393;
   background-color: $title-color;
 
@@ -12,14 +8,24 @@
   @include tablet {
     padding-top: 59px;
     padding-bottom: 40px;
-    font-size: 16px;
-    line-height: 1.25;
   }
 
   @include desktop {
     padding-top: 57px;
     padding-bottom: 37px;
   }
+}
+
+.footer__txt{
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.21;
+    text-align: center;
+    @include tablet {
+        font-size: 16px;
+        line-height: 1.25;
+      }
 }
 
 .footer__heart {
