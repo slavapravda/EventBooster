@@ -9,3 +9,12 @@ const colorChanger = () => {
 document
   .querySelector('.btn-theme-switcher')
   .addEventListener('click', colorChanger);
+
+const onLoad = () => {
+  document.body.classList.toggle(
+    'dark-mode',
+    localStorage.getItem('colorChanger') === 'true'
+  );
+};
+
+document.addEventListener('DOMContentLoaded', onLoad);
