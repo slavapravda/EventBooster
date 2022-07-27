@@ -1,9 +1,8 @@
-'use strict';
 import { fetchCardsByName, fetchCardsByCountry } from './search-api';
 import listCountries from '../tamplates/list-сountries.hbs';
 import * as listCountriesJson from '../json/countries-list.json';
 
-const formEl = document.querySelector('.search-form');
+const formEl = document.querySelector('.search_form');
 
 formEl.lastElementChild.insertAdjacentHTML(
   'beforeend',
