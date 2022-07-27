@@ -1,26 +1,6 @@
 body {
     font-family: $main-font;
-    background-color: $title-color;
-   
-    transition: all .4s ease;
-
-    @media screen and(min-width: 768px) {
-        background: url(../images/bg-body/bg-dark-768px.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
-    @media screen and (min-width: 1280px) {
-        margin: 0 auto;
-    
-        // width: 1280px;
-        background: url(../images/bg-body/bg-dark-1280px.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    
-  }
+    background-color: $text-color;
 }
 
   .no-scroll {
@@ -53,27 +33,3 @@ body {
     height: auto;
     // width: 100%;
   }
-
-    .dark-mode {
-      .event__info-date, .event__info-place{
-        color: black;
-      }
-    background-color: $white-color;
-
-    @media screen and(min-width: 768px) {
-        background: url(../images/bg-body/bg-light-768px.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-    
-    @media screen and (min-width: 1280px) {
-        margin: 0 auto;
-    
-        background: url(../images/bg-body/bg-light-1280px.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-  }
-  

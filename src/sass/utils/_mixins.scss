@@ -127,3 +127,9 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+@mixin bg-position {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
