@@ -1,0 +1,17 @@
+{{#each this}}
+  <article class='event__item'>
+    <div class='event__img-wrapper'>
+      <img class='event__img' src='{{this.images.url}}' />
+    </div>
+    <div class='event__info'>
+      <p class='event__info-name'>{{this.name}}</p>
+      <p class='event__info-date'>{{this.dates.start.dateTime}}</p>
+      <p class='event__info-place'>
+        <svg class='event__info-location'>
+          <use href='/src/images/icons.svg#icon-location'></use>
+        </svg>
+        {{this._embedded.venues.name}}
+      </p>
+    </div>
+  </article>
+{{/each}}
