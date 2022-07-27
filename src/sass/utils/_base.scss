@@ -1,5 +1,8 @@
 body {
     font-family: $main-font;
+    background-color: $title-color;
+
+    transition: all .3s ease;
   }
   
   .no-scroll {
@@ -32,3 +35,8 @@ body {
     height: auto;
     // width: 100%;
   }
+
+  .dark-mode {
+    background-color: $white-color;
+  }
+  
