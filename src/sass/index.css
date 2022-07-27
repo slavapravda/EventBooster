@@ -2,7 +2,24 @@
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #0e0e0e;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+}
+@media screen and (min-width: 768px) {
+  body {
+    background: url(../images/bg-body/bg-dark-768px.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 1280px) {
+  body {
+    margin: 0 auto;
+    background: url(../images/bg-body/bg-dark-1280px.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .no-scroll {
@@ -37,6 +54,26 @@ img {
 
 .dark-mode {
   background-color: #ffffff;
+}
+.dark-mode .event__info-date, .dark-mode .event__info-place {
+  color: black;
+}
+@media screen and (min-width: 768px) {
+  .dark-mode {
+    background: url(../images/bg-body/bg-light-768px.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .dark-mode {
+    margin: 0 auto;
+    background: url(../images/bg-body/bg-light-1280px.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .container {
@@ -497,7 +534,6 @@ img {
 
 .footer {
   color: #939393;
-  background-color: #0e0e0e;
   padding-top: 60px;
   padding-bottom: 24px;
 }
