@@ -1,11 +1,11 @@
-.search_form {
+.search__form {
   margin: 0 auto;
   width: 608px;
   margin-top: 21px;
   display: flex;
 }
-.search_select,
-.search_input {
+.search__select,
+.search__input {
   width: 288px;
   height: 40px;
 
@@ -14,11 +14,11 @@
   border-radius: 20px;
 }
 
-.search_block {
+.search__block {
   position: relative;
 }
 
-.search_button {
+.search__button {
   position: absolute;
   right: 10px;
   top: 8px;
