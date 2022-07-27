@@ -4,12 +4,25 @@
   margin-top: 21px;
   display: flex;
 }
-.search-input,
-.search-input-country {
+.search-select,
+.search-input {
   width: 288px;
   height: 40px;
 
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   border-radius: 20px;
+}
+
+.search-block {
+  position: relative;
+}
+
+.search-button {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border: 0;
+  outline: none;
+  z-index: 2;
 }
