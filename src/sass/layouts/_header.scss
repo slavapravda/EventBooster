@@ -30,10 +30,13 @@
 
     @media screen and (min-width: 1280px) {
         margin: 0 auto;
-
-        max-width: 1280px;
+       
+        // width: 1280px;
         height: 446px;
         background: url(../images/header-bg/header-1280px.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
         @media (min-device-pixel-ratio: 2),
         (min-resolution: 192dpi),
