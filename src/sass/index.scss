@@ -1,12 +1,15 @@
 @import './common';
 @import './utils/variables';
-@import './utils/base';
 @import './utils/mixins';
+@import './utils/base';
 @import './components/container';
 @import './components/navigation';
 @import './layouts/header';
 @import './layouts/form-search';
+
 @import './layouts/modal';
 @import './layouts/card-container';
+
 @import './components/buttons';
+@import './components/event-card';
 @import './layouts/footer';
