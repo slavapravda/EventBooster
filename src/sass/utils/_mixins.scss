@@ -49,10 +49,12 @@
 
 @mixin button {
   display: block;
-  width: 145px;
-  height: 40px;
+  // width: 145px;
+  // height: 40px;
   padding: 10px 19px;
   text-align: center;
+  border: 1px solid $close-modal-color;
+
   cursor: pointer;
   border-color: transparent;
   border-radius: 5px;
@@ -74,9 +76,9 @@
 
 @mixin button-inverse {
   display: block;
-  width: 230px;
+  // width: 230px;
   height: 40px;
-  padding: 10px 3px;
+  // padding: 10px 3px;
   text-align: center;
   cursor: pointer;
   border: 1px solid $close-modal-color;
@@ -87,8 +89,8 @@
   @include font(500, 16px, 1.25, 0.08em);
 
   @include tablet {
-    width: 255px;
-    padding: 10px 15px;
+    // width: 255px;
+    // padding: 10px 15px;
   }
 
   &:hover,
