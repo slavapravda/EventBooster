@@ -1,8 +1,10 @@
 import { fetchCardsByName, fetchCardsByCountry } from './search-api';
 import listCountries from '../templates/list-сountries.hbs';
+import cardsRender from '../templates/cards-render.hbs';
 import * as listCountriesJson from '../json/countries-list.json';
 
 const formEl = document.querySelector('.search__form');
+const conteinerEl = document.querySelector('.event .event__container');
 
 formEl.lastElementChild.insertAdjacentHTML(
   'beforeend',
@@ -20,6 +22,7 @@ const onSearchFormSubmit = async event => {
         _embedded: { events },
       },
     } = await fetchCardsByName(query, locale);
+    conteinerEl.innerHTML = cardsRender(events);
     console.log(events);
     //!!! events-передає масив об*єктів
   } catch (err) {
