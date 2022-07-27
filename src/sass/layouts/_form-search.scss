@@ -1,15 +1,28 @@
-.search-form {
+.search__form {
   margin: 0 auto;
   width: 608px;
   margin-top: 21px;
   display: flex;
 }
-.search-input,
-.search-input-country {
+.search__select,
+.search__input {
   width: 288px;
   height: 40px;
 
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   border-radius: 20px;
+}
+
+.search__block {
+  position: relative;
+}
+
+.search__button {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border: 0;
+  outline: none;
+  z-index: 2;
 }
