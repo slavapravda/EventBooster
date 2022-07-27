@@ -1,21 +1,26 @@
 'use strict';
 import { fetchCardsByName, fetchCardsByCountry } from './search-api';
 import listCountries from '../tamplates/listCountries.hbs';
+import * as listCountriesJson from '../json/countries-list.json';
 
 const formEl = document.querySelector('.search-form');
 
-console.dir(formEl);
+formEl.lastElementChild.insertAdjacentHTML(
+  'beforeend',
+  listCountries(listCountriesJson)
+);
 
 const onSearchFormSubmit = async event => {
   event.preventDefault();
   const query = formEl.elements.query.value;
+  const locale = formEl.elements.countrySelect.value;
 
   try {
     const {
       data: {
         _embedded: { events },
       },
-    } = await fetchCardsByName(query);
+    } = await fetchCardsByName(query, locale);
     console.log(events);
     //!!! events-передає масив об*єктів
   } catch (err) {
@@ -23,18 +28,5 @@ const onSearchFormSubmit = async event => {
   }
 };
 
-const onSearchCountries = async event => {
-  event.preventDefault();
-  const query = formEl.elements.country.value;
-  console.log(query);
-  try {
-    const { data } = await fetchCardsByCountry(query);
-    console.log(listCountries(data));
-    formEl.lastElementChild.innerHTML = listCountries(data);
-  } catch (err) {
-    console.log(err);
-  }
-};
-
 formEl.addEventListener('submit', onSearchFormSubmit);
-formEl.elements.country.addEventListener('input', onSearchCountries);
+formEl.elements.countrySelect.addEventListener('change', onSearchFormSubmit);
