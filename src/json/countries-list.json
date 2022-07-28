@@ -1,6 +1,5 @@
 [
   { "name": "Afghanistan", "code": "AF" },
-  { "name": "land Islands", "code": "AX" },
   { "name": "Albania", "code": "AL" },
   { "name": "Algeria", "code": "DZ" },
   { "name": "American Samoa", "code": "AS" },
@@ -121,6 +120,7 @@
   { "name": "Lao People\"S Democratic Republic", "code": "LA" },
   { "name": "Latvia", "code": "LV" },
   { "name": "Lebanon", "code": "LB" },
+  { "name": "land Islands", "code": "AX" },
   { "name": "Lesotho", "code": "LS" },
   { "name": "Liberia", "code": "LR" },
   { "name": "Libyan Arab Jamahiriya", "code": "LY" },

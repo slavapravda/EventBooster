@@ -1,13 +1,17 @@
 import { fetchCardsByName, fetchCardsByCountry } from './search-api';
 import listCountries from '../templates/list-сountries.hbs';
 import * as listCountriesJson from '../json/countries-list.json';
+import customSelect from 'custom-select';
 
 const formEl = document.querySelector('.search__form');
-
+const selectEl = document.querySelector('.search__select');
 formEl.lastElementChild.insertAdjacentHTML(
   'beforeend',
   listCountries(listCountriesJson)
 );
+
+customSelect('select');
+const cstSel = document.querySelector('.customSelect').customSelect;
 
 const onSearchFormSubmit = async event => {
   event.preventDefault();
@@ -28,4 +32,4 @@ const onSearchFormSubmit = async event => {
 };
 
 formEl.addEventListener('submit', onSearchFormSubmit);
-formEl.elements.countrySelect.addEventListener('change', onSearchFormSubmit);
+selectEl.addEventListener('change', onSearchFormSubmit);
