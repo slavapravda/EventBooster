@@ -1,10 +1,8 @@
+
 'use strict';
 
-<<<<<<< Updated upstream
 import { fetchCardsByName } from './search-api';
-=======
 import { fetchCardsByName, fetchCardsByCountry } from './search-api';
->>>>>>> Stashed changes
 import listCountries from '../templates/list-сountries.hbs';
 import cardsRender from '../templates/cards-render.hbs';
 import * as listCountriesJson from '../json/countries-list.json';
