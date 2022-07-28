@@ -18,6 +18,9 @@ const onSearchFormSubmit = async event => {
     const { data } = await fetchCardsByName(query, locale);
 
     console.log(data);
+    if (data.page.totalElements === 0) {
+      console.log('Такого імені не знайдено');
+    }
     //!!! events-передає масив об*єктів
   } catch (err) {
     console.log(err);
