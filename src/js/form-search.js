@@ -1,9 +1,10 @@
-'use strict';
-
 import { fetchCardsByName } from './search-api';
 import listCountries from '../templates/list-сountries.hbs';
 import cardsRender from '../templates/cards-render.hbs';
 import * as listCountriesJson from '../json/countries-list.json';
+
+import swal from 'sweetalert';
+
 import customSelect from 'custom-select';
 import { pageMenu } from './pagination';
 
@@ -18,7 +19,6 @@ formEl.lastElementChild.insertAdjacentHTML(
 
 customSelect('select');
 const cstSel = document.querySelector('.customSelect').customSelect;
-
 fetchCardsByName('', 'us')
   .then(response => {
     const result = response.data._embedded.events;
@@ -28,14 +28,19 @@ fetchCardsByName('', 'us')
 
 const onSearchFormSubmit = async event => {
   event.preventDefault();
+  console.log(event.currentTarget);
+
   const query = formEl.elements.query.value;
   const locale = formEl.elements.countrySelect.value;
 
   try {
     const { data } = await fetchCardsByName(query, locale);
     const result = data._embedded;
+
     if (result !== undefined) {
       conteinerEl.innerHTML = cardsRender(result.events);
+
+      formEl.reset();
 
       const response = await fetchCardsByName(query, locale);
       console.log(response.data.page.totalElements);
@@ -45,14 +50,23 @@ const onSearchFormSubmit = async event => {
       pagination.on('beforeMove', function (eventData) {
         console.log('Go to page ' + eventData.page + '?');
       });
-    }
-    console.log(data);
 
+      console.log(data);
+
+      return;
+    }
+    swal('There are no events in this country', {
+      closeOnClickOutside: true,
+      closeOnEsc: true,
+      buttons: false,
+    });
     if (data.page.totalElements === 0) {
-      console.log('Такого імені не знайдено');
+      swal('There are no events in this country', {
+        closeOnClickOutside: true,
+        closeOnEsc: true,
+        buttons: false,
+      });
     }
-
-    //!!! events-передає масив об*єктів
   } catch (err) {
     console.log(err);
   }
