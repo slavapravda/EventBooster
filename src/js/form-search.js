@@ -1,3 +1,5 @@
+'use strict';
+
 import { fetchCardsByName, fetchCardsByCountry } from './search-api';
 import listCountries from '../templates/list-сountries.hbs';
 import cardsRender from '../templates/cards-render.hbs';
@@ -10,6 +12,13 @@ formEl.lastElementChild.insertAdjacentHTML(
   'beforeend',
   listCountries(listCountriesJson)
 );
+
+fetchCardsByName('', 'us')
+  .then(response => {
+    conteinerEl.innerHTML = cardsRender(response);
+    console.log(response);
+  })
+  .catch(error => console.log(error));
 
 const onSearchFormSubmit = async event => {
   event.preventDefault();
