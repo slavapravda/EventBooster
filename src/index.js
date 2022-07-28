@@ -3,6 +3,6 @@ import './js/color-changer';
 
 import './js/cards-render';
 
-import './js/preloader';
 import './js/open-modal';
+import './js/preloader';
 import './js/btn-up';

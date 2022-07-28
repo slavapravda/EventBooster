@@ -5,13 +5,5 @@ window.addEventListener('load', () => {
   console.log(preloaderMask);
   setTimeout(() => {
     preloaderMask.remove();
-  }, 600);
+  }, 900);
 });
-
-// window.onload = function () {
-//   document.body.classList.add('loaded_hiding');
-//   window.setTimeout(function () {
-//     document.body.classList.add('loaded');
-//     document.body.classList.remove('loaded_hiding');
-//   }, 500);
-// };
