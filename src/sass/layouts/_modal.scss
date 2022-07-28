@@ -8,6 +8,7 @@
   visibility: visible;
   pointer-events: initial;
   overflow-y: scroll;
+  @include transition;
 
   background: rgba(32, 13, 29, 0.6);
   backdrop-filter: blur(3px);
@@ -24,7 +25,6 @@
   z-index: 10;
   top: 80%;
   left: 50%;
-
   background: #fff2fd;
   border-radius: 150px 0px;
 
@@ -173,6 +173,7 @@
   }
 }
 .buy-btn {
+  @include transition;
   @include upto-tablet {
     margin: 0 auto;
     margin-bottom: 16px;
@@ -186,6 +187,7 @@
 }
 
 .more-btn {
+  @include transition;
   margin: 0 auto;
   @include upto-tablet {
     font-size: 13px;
@@ -204,6 +206,7 @@
 
   width: 17px;
   height: 17px;
+  @include transition;
 
   &:hover,
   &:focus {
