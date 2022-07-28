@@ -17,7 +17,6 @@ fetchCardsByName('', 'us')
   .then(response => {
     const result = response.data._embedded.events;
     conteinerEl.innerHTML = cardsRender(result);
-    // console.log(result);
   })
   .catch(error => console.log(error));
 
@@ -27,10 +26,13 @@ const onSearchFormSubmit = async event => {
   const locale = formEl.elements.countrySelect.value;
 
   try {
-
     const { data } = await fetchCardsByName(query, locale);
-
+    const result = data._embedded;
+    if (result !== undefined) {
+      conteinerEl.innerHTML = cardsRender(result.events);
+    }
     console.log(data);
+
     if (data.page.totalElements === 0) {
       console.log('Такого імені не знайдено');
     }
