@@ -15,12 +15,9 @@ const onSearchFormSubmit = async event => {
   const locale = formEl.elements.countrySelect.value;
 
   try {
-    const {
-      data: {
-        _embedded: { events },
-      },
-    } = await fetchCardsByName(query, locale);
-    console.log(events);
+    const { data } = await fetchCardsByName(query, locale);
+
+    console.log(data);
     //!!! events-передає масив об*єктів
   } catch (err) {
     console.log(err);
