@@ -12,30 +12,24 @@
 
 .event__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 31px;
 
   @include tablet {
-    grid-template-columns: repeat(auto-fit, minmax(141px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 32px;
     grid-row-gap: 31px;
   }
 
   @include desktop {
-    grid-template-columns: repeat(auto-fit, minmax(267px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-row-gap: 40px;
   }
 }
 
 .event__item {
   cursor: pointer;
-  @include transition;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-  animation: rotateY 3s;
 }
 
 .flip-in-hor-top {
@@ -179,5 +173,3 @@
     height: 10px;
   }
 }
-
-
