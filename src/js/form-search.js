@@ -15,12 +15,12 @@ const onSearchFormSubmit = async event => {
   const locale = formEl.elements.countrySelect.value;
 
   try {
-    const {
-      data: {
-        _embedded: { events },
-      },
-    } = await fetchCardsByName(query, locale);
-    console.log(events);
+    const { data } = await fetchCardsByName(query, locale);
+
+    console.log(data);
+    if (data.page.totalElements === 0) {
+      console.log('Такого імені не знайдено');
+    }
     //!!! events-передає масив об*єктів
   } catch (err) {
     console.log(err);
