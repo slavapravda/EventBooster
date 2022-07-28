@@ -3,15 +3,23 @@
   width: 608px;
   margin-top: 21px;
   display: flex;
+  justify-content: space-around;
 }
 .search__select,
 .search__input {
   width: 288px;
   height: 40px;
+  padding: 10 10 10 32;
+  color: #939393;
+  $fw: 400;
+  $fs: 16px;
+  $lh: 20px;
 
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   border-radius: 20px;
+  border: none;
+  outline: none;
 }
 
 .search__block {
@@ -19,10 +27,34 @@
 }
 
 .search__button {
+  background-color: transparent;
   position: absolute;
   right: 10px;
   top: 8px;
   border: 0;
   outline: none;
   z-index: 2;
+}
+
+.search__select {
+  position: relative;
+  background-image: url('https://img.icons8.com/material-two-tone/24/000000/give-way.png');
+  background-repeat: no-repeat, repeat;
+  background-position: right 1rem center;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  background-size: 10px 12px;
+}
+// .search__select:after {
+//   content: '';
+//   width: 0.8em;
+//   height: 0.5em;
+//   background-color: var(--select-arrow);
+//   clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+// }
+
+.search__option {
+  position: absolute;
 }
