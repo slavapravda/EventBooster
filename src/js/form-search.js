@@ -15,7 +15,8 @@ formEl.lastElementChild.insertAdjacentHTML(
 
 fetchCardsByName('', 'us')
   .then(response => {
-    conteinerEl.innerHTML = cardsRender(response);
+    const result = response.data._embedded.events;
+    conteinerEl.innerHTML = cardsRender(result);
     console.log(response);
   })
   .catch(error => console.log(error));
