@@ -1,6 +1,6 @@
 'use strict';
 
-import { fetchCardsByName, fetchCardsByCountry } from './search-api';
+import { fetchCardsByName } from './search-api';
 import listCountries from '../templates/list-сountries.hbs';
 import cardsRender from '../templates/cards-render.hbs';
 import * as listCountriesJson from '../json/countries-list.json';
@@ -17,7 +17,6 @@ fetchCardsByName('', 'us')
   .then(response => {
     const result = response.data._embedded.events;
     conteinerEl.innerHTML = cardsRender(result);
-    // console.log(result);
   })
   .catch(error => console.log(error));
 
@@ -27,7 +26,6 @@ const onSearchFormSubmit = async event => {
   const locale = formEl.elements.countrySelect.value;
 
   try {
-
     const { data } = await fetchCardsByName(query, locale);
 
     console.log(data);

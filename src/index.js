@@ -4,3 +4,4 @@ import './js/color-changer';
 
 import './js/cards-render';
 
+import './js/open-modal';
