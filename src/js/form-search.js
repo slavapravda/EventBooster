@@ -27,8 +27,12 @@ const onSearchFormSubmit = async event => {
 
   try {
     const { data } = await fetchCardsByName(query, locale);
-
+    const result = data._embedded;
+    if (result !== undefined) {
+      conteinerEl.innerHTML = cardsRender(result.events);
+    }
     console.log(data);
+
     if (data.page.totalElements === 0) {
       console.log('Такого імені не знайдено');
     }

@@ -7,7 +7,6 @@ export const fetchCardsByName = (keyword, countryCode) => {
     apikey: API_KEY,
     keyword: keyword,
     size: 16,
-    page: 1,
   };
   if (countryCode.length) {
     params.countryCode = countryCode;
