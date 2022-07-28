@@ -1,24 +1,25 @@
 body {
   background-image: url(../images/bg-body/bg-noise.png);
-  
-    transition: all .4s ease;
-  
-    @include tablet {
-      background: url(../images/bg-body/bg-dark-768px.jpg);
-      @include bg-position;
-    }
-  
-    @include desktop {
-      margin: 0 auto;
-  
-      background: url(../images/bg-body/bg-dark-1280px.jpg);
-      @include bg-position;
-    }
+
+  transition: all 0.4s ease;
+
+  @include tablet {
+    background: url(../images/bg-body/bg-dark-768px.jpg);
+    @include bg-position;
+  }
+
+  @include desktop {
+    margin: 0 auto;
+
+    background: url(../images/bg-body/bg-dark-1280px.jpg);
+    @include bg-position;
+  }
 }
 
 .dark-mode {
   .event__info-date,
-  .event__info-place {
+  .event__info-place,
+  .event__info-location {
     color: $title-color;
   }
 
@@ -30,7 +31,7 @@ body {
     @include bg-position;
   }
 
-    @include desktop {
+  @include desktop {
     margin: 0 auto;
 
     background: url(../images/bg-body/bg-light-1280px.jpg);
