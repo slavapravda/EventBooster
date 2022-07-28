@@ -17,7 +17,7 @@ fetchCardsByName('', 'us')
   .then(response => {
     const result = response.data._embedded.events;
     conteinerEl.innerHTML = cardsRender(result);
-    console.log(response);
+    // console.log(result);
   })
   .catch(error => console.log(error));
 
