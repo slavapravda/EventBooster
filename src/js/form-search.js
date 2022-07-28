@@ -14,7 +14,6 @@ import swal from 'sweetalert';
 import customSelect from 'custom-select';
 import { pageMenu } from './pagination';
 
-
 const formEl = document.querySelector('.search__form');
 const selectEl = document.querySelector('.search__select');
 const conteinerEl = document.querySelector('.event .event__container');
@@ -49,20 +48,16 @@ const onSearchFormSubmit = async event => {
 
       formEl.reset();
 
-      
-    const response = await fetchCardsByName(query, locale);    
-    console.log(response.data.page.totalElements);
-    
-    const pagination = pageMenu(response.data.page.totalElements);
-    console.log(response);
-    pagination.on('beforeMove', function(eventData) {
-    console.log('Go to page ' + eventData.page + '?');
-    
-    });
-    
-    }
-    console.log(data);
+      const response = await fetchCardsByName(query, locale);
+      console.log(response.data.page.totalElements);
 
+      const pagination = pageMenu(response.data.page.totalElements);
+      console.log(response);
+      pagination.on('beforeMove', function (eventData) {
+        console.log('Go to page ' + eventData.page + '?');
+      });
+
+      console.log(data);
 
       return;
     }
