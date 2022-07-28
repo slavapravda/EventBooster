@@ -6,6 +6,7 @@
   justify-content: space-around;
 }
 .search__select,
+// .custom-select-container,
 .search__input {
   width: 288px;
   height: 40px;
@@ -36,25 +37,99 @@
   z-index: 2;
 }
 
-.search__select {
-  position: relative;
-  background-image: url('https://img.icons8.com/material-two-tone/24/000000/give-way.png');
-  background-repeat: no-repeat, repeat;
-  background-position: right 1rem center;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
+// .search__select {
+//   position: relative;
+//   background-image: url('https://img.icons8.com/material-two-tone/24/000000/give-way.png');
+//   background-repeat: no-repeat, repeat;
+//   background-position: right 1rem center;
+//   -moz-appearance: none;
+//   -webkit-appearance: none;
+//   appearance: none;
 
-  background-size: 10px 12px;
-}
-// .search__select:after {
-//   content: '';
-//   width: 0.8em;
-//   height: 0.5em;
-//   background-color: var(--select-arrow);
-//   clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+//   background-size: 10px 12px;
 // }
+// !!!!!
+.custom-select-container {
+  background-size: 10px 12px;
 
-.search__option {
+  position: relative;
+  box-sizing: border-box;
+}
+.custom-select-container * {
+  box-sizing: border-box;
+}
+.custom-select-container.is-disabled {
+  opacity: 0.333;
+}
+.custom-select-opener {
+  background-color: #ccc;
+  padding: 0.5em;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+
+  width: 288px;
+  height: 40px;
+  padding: 10 10 10 32;
+  color: #939393;
+  $fw: 400;
+  $fs: 16px;
+  $lh: 20px;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+.custom-select-container select {
+  visibility: hidden;
   position: absolute;
+  top: 0;
+  left: 0;
+}
+.custom-select-panel {
+  max-height: 0;
+  transition: max-height 0.5s ease-out, overflow-y 0.1s 0.5s;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+
+  width: 270px;
+  height: 210px;
+  left: 9px;
+  top: 0;
+}
+.custom-select-container.is-open .custom-select-panel {
+  max-height: 10.7em;
+  overflow-y: auto;
+  z-index: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 46px 66px 10px 30px;
+  color: #cccccc;
+}
+.custom-select-option {
+  padding: 0.5em;
+}
+.custom-select-option.has-focus {
+  background-color: #dc56c5;
+}
+.custom-select-option.is-selected::before {
+  content: '✔';
+  padding-right: 0.5em;
+}
+.custom-select-optgroup > .custom-select-option {
+  padding-left: 2em;
+}
+.custom-select-optgroup::before {
+  content: attr(data-label);
+  display: block;
+  padding: 0.5em;
+  color: #888;
 }
