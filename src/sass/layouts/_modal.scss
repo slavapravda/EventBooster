@@ -118,10 +118,12 @@
 }
 
 .content__txt {
-  font-size: 16px;
   margin-bottom: 16px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.25;
+  
+  color: $text-color;
 
   @include desktop {
     font-size: 18px;
