@@ -1,6 +1,6 @@
 'use strict';
 
-import { fetchCardsByName, fetchCardsByCountry } from './search-api';
+import { fetchCardsByName } from './search-api';
 import listCountries from '../templates/list-сountries.hbs';
 import cardsRender from '../templates/cards-render.hbs';
 import * as listCountriesJson from '../json/countries-list.json';
