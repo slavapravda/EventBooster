@@ -5,6 +5,7 @@ import listCountries from '../templates/list-сountries.hbs';
 import cardsRender from '../templates/cards-render.hbs';
 import * as listCountriesJson from '../json/countries-list.json';
 import customSelect from 'custom-select';
+import { pageMenu } from './pagination';
 
 const formEl = document.querySelector('.search__form');
 const selectEl = document.querySelector('.search__select');
@@ -34,6 +35,17 @@ const onSearchFormSubmit = async event => {
     const result = data._embedded;
     if (result !== undefined) {
       conteinerEl.innerHTML = cardsRender(result.events);
+      
+    const response = await fetchCardsByName(query, locale);    
+    console.log(response.data.page.totalElements);
+    
+    const pagination = pageMenu(response.data.page.totalElements);
+    console.log(response);
+    pagination.on('beforeMove', function(eventData) {
+    console.log('Go to page ' + eventData.page + '?');
+    
+    });
+    
     }
     console.log(data);
 
