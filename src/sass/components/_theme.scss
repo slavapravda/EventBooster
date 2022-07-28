@@ -4,14 +4,14 @@ body {
   transition: all 0.4s ease;
 
   @include tablet {
-    background: url(../images/bg-body/bg-dark-768px.jpg);
+    background: url(../images/bg-body/bg-dark.png);
     @include bg-position;
   }
 
   @include desktop {
     margin: 0 auto;
 
-    background: url(../images/bg-body/bg-dark-1280px.jpg);
+    background: url(../images/bg-body/bg-dark.png);
     @include bg-position;
   }
 }
