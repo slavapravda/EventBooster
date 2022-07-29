@@ -20,7 +20,8 @@ formEl.lastElementChild.insertAdjacentHTML(
 );
 
 customSelect('select');
-
+const cstSel = document.querySelector('.customSelect').customSelect;
+console.log(cstSel);
 fetchCardsByName('', 'us')
   .then(response => {
     const result = response.data._embedded.events;
@@ -43,6 +44,7 @@ const onSearchFormSubmit = async event => {
         buttons: false,
       });
 
+      cstSel.select.options[0];
       formEl.reset();
 
       return;
@@ -52,9 +54,17 @@ const onSearchFormSubmit = async event => {
 
     conteinerEl.innerHTML = cardsRender(result.events);
 
-    const pagination = pageMenu(data.page.totalElements);
-    pagination.on('beforeMove', function (eventData) {
+    const pagination = pageMenu(data.page.totalElements / 16);
+    pagination.on('beforeMove', async function (eventData) {
       console.log('Go to page ' + eventData.page + '?');
+      const page = eventData.page;
+      try {
+        const { data } = await fetchCardsByName(query, locale, page);
+        const result = data._embedded;
+        conteinerEl.innerHTML = cardsRender(result.events);
+      } catch (err) {
+        console.log(err);
+      }
     });
 
     formEl.reset();
