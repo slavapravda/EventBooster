@@ -32,7 +32,6 @@ const onSearchFormSubmit = async event => {
   event.preventDefault();
   const query = formEl.elements.query.value;
   const locale = formEl.elements.countrySelect.value;
-  console.log('locale', locale);
 
   try {
     const { data } = await fetchCardsByName(query, locale);
@@ -62,7 +61,6 @@ const onSearchFormSubmit = async event => {
 
     const pagination = pageMenu(data.page.totalElements / 16);
     pagination.on('beforeMove', async function (eventData) {
-      console.log('Go to page ' + eventData.page + '?');
       const page = eventData.page;
       try {
         const { data } = await fetchCardsByName(query, locale, page);
