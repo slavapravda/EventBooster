@@ -1,1 +1,1 @@
-EventBooster - Search for events around the world
+EventBooster - Search for events around the world!
