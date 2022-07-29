@@ -146,13 +146,10 @@
 }
 
 .event__info-place {
-  display: flex;
-  justify-content: center;
   margin-bottom: 8px;
   font-weight: 600;
   font-size: 12px;
   line-height: 15px;
-  color: $white-color;
 
   @include tablet {
     font-size: 14px;
@@ -160,16 +157,20 @@
   }
 }
 
-.event__info-location {
-  display: block;
+.event__info-location-icon {
+  display: inline-block;
   width: 6px;
-  height: 9px;
+  height: 8px;
   margin-top: 3px;
   margin-right: 3px;
-  color: $white-color;
+  background-image: url(../images/event-location.svg);
 
   @include tablet {
-    width: 7.55px;
+    width: 8px;
     height: 10px;
   }
+}
+
+.dark-mode .event__info-location-icon {
+  filter: invert(1);
 }
