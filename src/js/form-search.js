@@ -1,8 +1,6 @@
-
 'use strict';
 
 import { fetchCardsByName } from './search-api';
-import { fetchCardsByName, fetchCardsByCountry } from './search-api';
 import listCountries from '../templates/list-сountries.hbs';
 import cardsRender from '../templates/cards-render.hbs';
 import * as listCountriesJson from '../json/countries-list.json';
@@ -23,6 +21,7 @@ formEl.lastElementChild.insertAdjacentHTML(
 
 customSelect('select');
 const cstSel = document.querySelector('.customSelect').customSelect;
+console.log(cstSel);
 fetchCardsByName('', 'us')
   .then(response => {
     const result = response.data._embedded.events;
@@ -32,50 +31,43 @@ fetchCardsByName('', 'us')
 
 const onSearchFormSubmit = async event => {
   event.preventDefault();
-  console.log(event.currentTarget);
-
   const query = formEl.elements.query.value;
   const locale = formEl.elements.countrySelect.value;
 
   try {
     const { data } = await fetchCardsByName(query, locale);
-    const result = data._embedded;
 
-    if (result !== undefined) {
-      conteinerEl.innerHTML = cardsRender(result.events);
-
-      formEl.reset();
-
-      const pagination = pageMenu(data.page.totalElements/16);
-
-      pagination.on('beforeMove', async function (eventData) {
-        console.log('Go to page ' + eventData.page + '?');
-        const page = eventData.page;
-        try {
-        const { data } = await fetchCardsByName(query, locale, page);
-        const result = data._embedded;
-        conteinerEl.innerHTML = cardsRender(result.events);
-        } catch(err) {
-          console.log(err);
-        };
-      });
-
-      console.log(data);
-
-      return;
-    }
-    swal('There are no events in this country', {
-      closeOnClickOutside: true,
-      closeOnEsc: true,
-      buttons: false,
-    });
     if (data.page.totalElements === 0) {
       swal('There are no events in this country', {
         closeOnClickOutside: true,
         closeOnEsc: true,
         buttons: false,
       });
+
+      cstSel.select.options[0];
+      formEl.reset();
+
+      return;
     }
+
+    const result = data._embedded;
+
+    conteinerEl.innerHTML = cardsRender(result.events);
+
+    const pagination = pageMenu(data.page.totalElements / 16);
+    pagination.on('beforeMove', async function (eventData) {
+      console.log('Go to page ' + eventData.page + '?');
+      const page = eventData.page;
+      try {
+        const { data } = await fetchCardsByName(query, locale, page);
+        const result = data._embedded;
+        conteinerEl.innerHTML = cardsRender(result.events);
+      } catch (err) {
+        console.log(err);
+      }
+    });
+
+    formEl.reset();
   } catch (err) {
     console.log(err);
   }
