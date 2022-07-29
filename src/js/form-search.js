@@ -19,9 +19,8 @@ formEl.lastElementChild.insertAdjacentHTML(
   listCountries(listCountriesJson)
 );
 
-customSelect('select');
-const cstSel = document.querySelector('.customSelect').customSelect;
-console.log(cstSel);
+const select = customSelect('select')[0];
+
 fetchCardsByName('', 'ca')
   .then(response => {
     const result = response.data._embedded.events;
@@ -33,6 +32,7 @@ const onSearchFormSubmit = async event => {
   event.preventDefault();
   const query = formEl.elements.query.value;
   const locale = formEl.elements.countrySelect.value;
+  console.log('locale', locale);
 
   try {
     const { data } = await fetchCardsByName(query, locale);
@@ -44,7 +44,7 @@ const onSearchFormSubmit = async event => {
         buttons: false,
       });
 
-      cstSel.select.options[0];
+      select.value = '';
       formEl.reset();
       fetchCardsByName('', 'ca')
         .then(response => {
@@ -73,7 +73,7 @@ const onSearchFormSubmit = async event => {
       }
     });
 
-    formEl.reset();
+    formEl.elements.query.value = '';
   } catch (err) {
     console.log(err);
   }
