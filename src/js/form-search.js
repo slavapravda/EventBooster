@@ -21,11 +21,9 @@ formEl.lastElementChild.insertAdjacentHTML(
   listCountries(listCountriesJson)
 );
 
-const size = 16;
-
 customSelect('select');
 const cstSel = document.querySelector('.customSelect').customSelect;
-fetchCardsByName('', 'us', size)
+fetchCardsByName('', 'us')
   .then(response => {
     const result = response.data._embedded.events;
     conteinerEl.innerHTML = cardsRender(result);
@@ -40,7 +38,7 @@ const onSearchFormSubmit = async event => {
   const locale = formEl.elements.countrySelect.value;
 
   try {
-    const { data } = await fetchCardsByName(query, locale, size);
+    const { data } = await fetchCardsByName(query, locale);
     const result = data._embedded;
 
     if (result !== undefined) {
@@ -48,15 +46,13 @@ const onSearchFormSubmit = async event => {
 
       formEl.reset();
 
-      console.log(data.page.totalElements);
-
-      const pagination = pageMenu(data.page.totalElements/size);
+      const pagination = pageMenu(data.page.totalElements/16);
 
       pagination.on('beforeMove', async function (eventData) {
         console.log('Go to page ' + eventData.page + '?');
         const page = eventData.page;
         try {
-        const { data } = await fetchCardsByName(query, locale, page, size);
+        const { data } = await fetchCardsByName(query, locale, page);
         const result = data._embedded;
         conteinerEl.innerHTML = cardsRender(result.events);
         } catch(err) {
