@@ -1,6 +1,7 @@
 import modal from '../templates/modal.hbs';
 import { fetchCardById, fetchCardsByName } from './search-api';
 import cardsRender from '../templates/cards-render.hbs';
+import { pageMenu } from './pagination';
 
 const eventEl = document.querySelector('.event');
 const modalBackdropEl = document.querySelector('.backdrop');
@@ -70,6 +71,18 @@ modalBackdropEl.addEventListener('click', async event => {
     const response = await fetchCardsByName(currentAuthor, '');
     const result = response.data._embedded.events;
     conteinerEl.innerHTML = cardsRender(result);
+    const pagination = pageMenu(response.data.page.totalElements);
+    pagination.on('beforeMove', async function (eventData) {
+      const page = eventData.page;
+      try {
+        const response = await fetchCardsByName(currentAuthor, '', page);
+        const result = response.data._embedded.events;
+        conteinerEl.innerHTML = cardsRender(result);
+      } catch (err) {
+        console.log(err);
+      }
+    });
+
     closeModal();
   }
 });
