@@ -1,8 +1,12 @@
 .search__form {
   margin: 0 auto;
   width: 280px;
+  height: 40px;
   display: flex;
   flex-wrap: wrap;
+  // @include mobile {
+  //   max-width: 100%;
+  // }
 
   @include tablet {
     justify-content: space-between;
@@ -26,8 +30,12 @@
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   border-radius: 20px;
-  border: none;
+  border: 1px solid transparent;
   outline: none;
+  &:focus,
+  &:hover {
+    border-color: #dc56c5;
+  }
   @include tablet {
     width: 336px;
   }
@@ -76,8 +84,6 @@
   height: 40px;
   padding: 10 10 10 32;
   color: #939393;
-  $fw: 400;
-  $fs: 16px;
   $lh: 20px;
 
   background: rgba(255, 255, 255, 0.2);
@@ -100,6 +106,9 @@
     calc(100% - 26px) calc(1em + 2px), calc(100% - 2.5em) 0.5em !important;
   background-repeat: no-repeat !important;
   background-size: 8px 8px, 8px 8px, 1px 5.5em !important;
+
+  border-color: #dc56c5;
+  border: 1px solid #dc56c5;
 }
 .custom-select-container select {
   visibility: hidden;
@@ -141,17 +150,8 @@
 }
 .custom-select-option {
   padding: 1px 0px 1px 30px;
+  cursor: pointer;
 }
 .custom-select-option.has-focus {
   background-color: #dc56c5;
-}
-
-.custom-select-optgroup > .custom-select-option {
-  padding-left: 2em;
-}
-.custom-select-optgroup::before {
-  content: attr(data-label);
-  display: block;
-  padding: 0.5em;
-  color: #888;
 }
