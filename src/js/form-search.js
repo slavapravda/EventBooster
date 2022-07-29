@@ -22,7 +22,7 @@ formEl.lastElementChild.insertAdjacentHTML(
 customSelect('select');
 const cstSel = document.querySelector('.customSelect').customSelect;
 console.log(cstSel);
-fetchCardsByName('', 'us')
+fetchCardsByName('', 'ca')
   .then(response => {
     const result = response.data._embedded.events;
     conteinerEl.innerHTML = cardsRender(result);
@@ -46,6 +46,12 @@ const onSearchFormSubmit = async event => {
 
       cstSel.select.options[0];
       formEl.reset();
+      fetchCardsByName('', 'ca')
+        .then(response => {
+          const result = response.data._embedded.events;
+          conteinerEl.innerHTML = cardsRender(result);
+        })
+        .catch(error => console.log(error));
 
       return;
     }
