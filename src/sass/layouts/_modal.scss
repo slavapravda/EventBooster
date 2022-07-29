@@ -30,14 +30,13 @@
 
   transform: translate(-50%, -50%) scale(1);
 
-    width: 280px;
-    height: 952;
-    padding-top: 80px;
-    padding-bottom: 100px;
-    padding-right: 21px;
-    padding-left: 16px;
-  
-  
+  width: 280px;
+  height: 952;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  padding-right: 21px;
+  padding-left: 16px;
+
   @include tablet {
     width: 704px;
     height: 845px;
@@ -122,7 +121,7 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1.25;
-  
+
   color: $text-color;
 
   @include desktop {
@@ -156,7 +155,7 @@
 }
 
 .modal__main-pic {
-  object-fit: cover;
+  max-width: 50%;
 
   @include upto-tablet {
     display: none;
@@ -172,6 +171,12 @@
     min-height: 664px;
   }
 }
+
+.modal__main-pic img {
+  height: 100%;
+  object-fit: cover;
+}
+
 .buy-btn {
   @include transition;
   @include upto-tablet {
@@ -189,6 +194,7 @@
 .more-btn {
   @include transition;
   margin: 0 auto;
+
   @include upto-tablet {
     font-size: 13px;
     width: 230px;
@@ -199,7 +205,6 @@
   position: absolute;
   top: 32px;
   right: 32px;
-  fill: $close-modal-color;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -210,8 +215,7 @@
 
   &:hover,
   &:focus {
-    fill: $accent-color;
-    @include transition;
+    opacity: 0.7;
   }
 
   @include desktop {
@@ -223,6 +227,7 @@
 .modal__icon-close {
   width: 17px;
   height: 17px;
+  background-image: url('../images/modal/modal-close.svg');
 
   @include desktop {
     width: 25px;
