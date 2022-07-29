@@ -29,9 +29,14 @@
   border-radius: 20px;
   border: 1px solid transparent;
   outline: none;
+
   &:focus,
   &:hover {
     border-color: #dc56c5;
+
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    transition-property: border-color;
   }
   @include tablet {
     width: 336px;
@@ -107,6 +112,10 @@
   border-color: #dc56c5;
   border: 1px solid #dc56c5;
   -webkit-tap-highlight-color: transparent;
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 250ms !important;
+  transition-property: border-color, background-image, background-position !important;
 }
 .custom-select-container select {
   visibility: hidden;
@@ -152,6 +161,9 @@
 }
 .custom-select-option.has-focus {
   background-color: #dc56c5;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+  transition-property: background-color;
 }
 .search__form {
   margin: 0 auto;
@@ -176,6 +188,7 @@
   border-radius: 20px;
   outline: none;
 
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   color: #939393;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
@@ -203,10 +216,6 @@
 .custom-select-container select,
 .custom-select-panel {
   position: absolute;
-}
-
-.search__input {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .custom-select-opener {
@@ -291,4 +300,7 @@
 }
 .custom-select-option.has-focus {
   background-color: #dc56c5;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+  transition-property: background-color;
 }

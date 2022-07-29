@@ -32,7 +32,6 @@ const onSearchFormSubmit = async event => {
   event.preventDefault();
   const query = formEl.elements.query.value;
   const locale = formEl.elements.countrySelect.value;
-  console.log('locale', locale);
 
   try {
     const { data } = await fetchCardsByName(query, locale);
