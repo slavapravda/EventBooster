@@ -15,6 +15,7 @@ const openModal = event => {
 
   if (eventCardEl) {
     modalBackdropEl.classList.remove('is-hidden');
+    document.body.style.overflow = 'hidden';
 
     fetchCardById(eventCardEl.dataset.eventId)
       .then(response => {
@@ -49,6 +50,7 @@ eventEl.addEventListener('click', openModal);
 function closeModal() {
   modalBackdropEl.innerHTML = '';
   modalBackdropEl.classList.add('is-hidden');
+  document.body.style.overflow = 'scroll';
 }
 
 modalBackdropEl.addEventListener('click', event => {
