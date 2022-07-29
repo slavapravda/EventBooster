@@ -17,9 +17,11 @@ body {
 }
 
 .dark-mode {
+
   .event__info-date,
   .event__info-place,
-  .event__info-location {
+  .event__info-location,
+  .tui-pagination .tui-page-btn {
     color: $title-color;
   }
 
