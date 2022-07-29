@@ -21,7 +21,7 @@ formEl.lastElementChild.insertAdjacentHTML(
 
 const select = customSelect('select')[0];
 
-fetchCardsByName('', 'us')
+fetchCardsByName('', 'ca')
   .then(response => {
     const result = response.data._embedded.events;
     conteinerEl.innerHTML = cardsRender(result);
@@ -45,6 +45,13 @@ const onSearchFormSubmit = async event => {
 
       select.value = '';
       formEl.reset();
+      fetchCardsByName('', 'ca')
+        .then(response => {
+          const result = response.data._embedded.events;
+          conteinerEl.innerHTML = cardsRender(result);
+        })
+        .catch(error => console.log(error));
+
       return;
     }
 
