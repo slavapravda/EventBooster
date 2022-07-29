@@ -46,13 +46,18 @@ const onSearchFormSubmit = async event => {
 
       formEl.reset();
 
-      const response = await fetchCardsByName(query, locale);
-      console.log(response.data.page.totalElements);
+      const pagination = pageMenu(data.page.totalElements/16);
 
-      const pagination = pageMenu(response.data.page.totalElements);
-      console.log(response);
-      pagination.on('beforeMove', function (eventData) {
+      pagination.on('beforeMove', async function (eventData) {
         console.log('Go to page ' + eventData.page + '?');
+        const page = eventData.page;
+        try {
+        const { data } = await fetchCardsByName(query, locale, page);
+        const result = data._embedded;
+        conteinerEl.innerHTML = cardsRender(result.events);
+        } catch(err) {
+          console.log(err);
+        };
       });
 
       console.log(data);
