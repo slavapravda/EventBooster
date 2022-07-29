@@ -5,7 +5,7 @@ body {
 
   @include tablet {
     background: url(../images/bg-body/bg-noise.png),
-    url(../images/bg-body/bg-dark-768px.png);
+      url(../images/bg-body/bg-dark-768px.png);
     @include bg-position;
   }
 
@@ -13,15 +13,17 @@ body {
     margin: 0 auto;
 
     background: url(../images/bg-body/bg-noise.png),
-    url(../images/bg-body/bg-dark-1280px.png) ;
+      url(../images/bg-body/bg-dark-1280px.png);
     @include bg-position;
   }
 }
 
 .light-mode {
+
   .event__info-date,
   .event__info-place,
-  .event__info-location {
+  .event__info-location,
+  .tui-pagination .tui-page-btn {
     color: $text-color;
   }
 
