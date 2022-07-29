@@ -1,12 +1,12 @@
 .event {
-  margin-top: 56px;
+  margin-top: -45px;
 
   @include tablet {
-    margin-top: 80px;
+    margin-top: -75px;
   }
 
   @include desktop {
-    margin-top: 120px;
+    margin-top: -55px;
   }
 }
 
