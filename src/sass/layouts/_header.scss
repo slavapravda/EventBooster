@@ -30,6 +30,7 @@
 
     @include desktop {
         margin: 0 auto;
+        width: 1280px;
        
         height: 446px;
         background: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, rgba(14, 14, 14, 0.8) 100%),rgba(11, 11, 11, 0.5), url(../images/header-bg/header-1280px.jpg);
@@ -49,14 +50,13 @@
     }
 
     &__title {
-        padding-top: 78px;
+        padding-top: 80px;
         margin-bottom: 25px;
-         margin-left: auto;
+        margin-left: auto;
         margin-right: auto;
         
         width: 212px;
         
-        font-weight: 900px;
         font-size: 18px;
         line-height: 1.22;
         text-align: center;
@@ -65,14 +65,15 @@
         
         @include tablet {
             padding-top: 40px;
-            width: 353px;
+            margin-bottom: 40px;
+            width: 400px;
             font-size: 30px;
         }
         
         @include desktop {
-            width: 589px;
+            margin-bottom: 48px;
+            width: 608px;
             font-size: 50px;
-            white-space: inherit;
         }
     }
 }
