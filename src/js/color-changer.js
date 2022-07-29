@@ -3,7 +3,7 @@ const colorChanger = () => {
   const wasColorChanger = localStorage.getItem('colorChanger') === 'true';
 
   localStorage.setItem('colorChanger', !wasColorChanger);
-  body.classList.toggle('dark-mode', !wasColorChanger);
+  body.classList.toggle('light-mode', !wasColorChanger);
 };
 
 document
@@ -12,7 +12,7 @@ document
 
 const onLoad = () => {
   document.body.classList.toggle(
-    'dark-mode',
+    'light-mode',
     localStorage.getItem('colorChanger') === 'true'
   );
 };

@@ -28,7 +28,6 @@
   }
 }
 
-
 .footer__heart {
   animation: heartbeat 1s infinite;
   display: inline-block;
@@ -36,18 +35,17 @@
   font-size: 17px;
 }
 
-
 @keyframes heartbeat {
   0% {
-    transform: scale(1)
+    transform: scale(1);
   }
 
   20% {
-    transform: scale(1.25)
+    transform: scale(1.25);
   }
 
   40% {
-    transform: scale(1.5)
+    transform: scale(1.5);
   }
 }
 
