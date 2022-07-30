@@ -1,0 +1,45 @@
+<div class='modal'>
+  <div class='modal__card'>
+    <div class='modal__first-pic'>
+      <img class='circle-pic' src='{{image}}' alt='mini poster' />
+    </div>
+    <div class='modal__body'>
+      <div class='modal__main-pic'>
+        <img src='{{image}}' alt='main poster' />
+      </div>
+      <div class='modal__main-content'>
+        <h3 class='content__title'>INFO</h3>
+        <p class='content__txt'>
+          {{info}}
+        </p>
+
+        <h3 class='content__title'>WHEN</h3>
+        <p class='content__txt'>
+          {{when}}
+          <br />
+          {{whenTime}}
+        </p>
+
+        <h3 class='content__title'>WHERE</h3>
+        <p class='content__txt'>{{where}} <br />{{whereName}}</p>
+
+        <h3 class='content__title'>WHO</h3>
+        <p class='content__txt'>{{who}}</p>
+
+        <h3 class='content__title'>PRICES</h3>
+        {{#each this.prices}}
+          <div class='content__price'>
+            <svg class='content__price-svg'></svg>
+            <p class='content__txt'>{{this.title}}</p>
+          </div>
+          <button class='buy-btn' type='button'>BUY TICKETS</button>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <button class='more-btn' type='button'>MORE FROM THIS AUTHOR</button>
+  <button type='button' class='modal__btn-close'>
+    <div class='modal__icon-close'>
+    </div>
+  </button>
+</div>
