@@ -1,0 +1,21 @@
+{{#each this}}
+  <article class='event__item flip-in-hor-top' data-event-id='{{id}}'>
+    <div class='event__img-wrapper'>
+      {{#each this.images}}
+        {{#if @first}}
+          <img class='event__img' src='{{url}}' />
+        {{/if}}
+      {{/each}}
+    </div>
+    <div class='event__info'>
+      <p class='event__info-name'>{{this.name}}</p>
+      <p class='event__info-date'>{{this.dates.start.localDate}}</p>
+      <p class='event__info-place'>
+        <span class='event__info-location-icon'></span>
+        {{#each this._embedded.venues}}
+          {{name}}
+        {{/each}}
+      </p>
+    </div>
+  </article>
+{{/each}}
