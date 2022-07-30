@@ -1,7 +1,7 @@
 'use strict';
 
 import { fetchCardsByName } from './search-api';
-import listCountries from '../templates/list-сountries.hbs';
+import countriesList from '../templates/countries-list.hbs';
 import cardsRender from '../templates/cards-render.hbs';
 import * as listCountriesJson from '../json/countries-list.json';
 
@@ -16,7 +16,7 @@ const conteinerEl = document.querySelector('.event .event__container');
 
 formEl.lastElementChild.insertAdjacentHTML(
   'beforeend',
-  listCountries(listCountriesJson)
+  countriesList(listCountriesJson)
 );
 
 const select = customSelect('select')[0];
