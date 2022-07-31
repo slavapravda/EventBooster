@@ -25,6 +25,19 @@ fetchCardsByName('', 'ca')
   .then(response => {
     const result = response.data._embedded.events;
     conteinerEl.innerHTML = cardsRender(result);
+
+    const pagination = pageMenu(response.data.page.totalElements / 16);
+    pagination.on('beforeMove', async function (eventData) {
+      const page = eventData.page;
+      try {
+        const { data } = await fetchCardsByName(query, locale, page);
+        const result = response.data._embedded;
+        conteinerEl.innerHTML = cardsRender(result.events);
+      } catch (err) {
+        console.log(err);
+      }
+    });
+
   })
   .catch(error => console.log(error));
 
@@ -51,7 +64,6 @@ const onSearchFormSubmit = async event => {
           conteinerEl.innerHTML = cardsRender(result);
         })
         .catch(error => console.log(error));
-
       return;
     }
 
